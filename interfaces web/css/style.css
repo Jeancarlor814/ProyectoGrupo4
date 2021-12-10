@@ -1,0 +1,37 @@
+.contenido-video{
+	background: #ffffff;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.video{
+	position: absolute;
+	max-width: 300%;
+	width: 100%;
+}
+/* Resoluciones*/
+@media(max-width: 900px){
+	.video{
+		width: 150%;
+	}
+}
+@media(max-width: 650px){
+	.video{
+		width: 280%;
+	}
+}
+@media(max-width: 480px){
+	.video{ 
+		width: 300%;
+	}
+}
+
+.left{
+	text-align: left;
+}
+.input{
+    width: 17rem;
+}	

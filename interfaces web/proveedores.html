@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Tiendas La Genérica | Proveedores</title>
+		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+		<!-- CSS -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css">
+		<link href="dist/css/skins/skin-blue-light.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="datatables/dataTables.bootstrap.css">
+		<script src="jquery/jquery-2.1.4.min.js"></script>
+	</head>
+	<body class="skin-blue-light sidebar-mini" >
+		<div class="wrapper">
+			<!-- Header -->
+			<header class="main-header">
+				<!-- Logo -->
+				<a href="menuprincipal.html" class="logo">
+					<!-- Mini logo -->
+					<span class="logo-mini"><b>TLG</b></span>
+					<!-- Logo normal -->
+					<span class="logo-lg"><b>TIENDAS LA GENÉRICA</b></span>
+				</a>
+				<!-- Barra de Navegación -->
+				<nav class="navbar navbar-static-top" role="navigation">
+					<!-- Botón Hamburguesa -->
+					<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+					<span class="sr-only">Barra de Navegación</span>
+				  </a> 
+				</nav>
+			</header>
+			<aside class="main-sidebar">
+			<section class="sidebar">
+			<!-- Menu de Navegación-->
+			<ul class="sidebar-menu">
+				<li class="header"> ADMINISTRACIÓN</li>
+				<li><a href="menuprincipal.html"><i class='fa fa-dashboard'></i> <span> MENÚ</span></a></li>
+				<li><a href="productos.html"><i class='fa fa-shopping-cart'></i> <span> Productos</span></a></li>
+				<li><a href="clientes.html"><i class="fa fa-user"></i> <span> Clientes</span></a></li>
+				<li><a href="proveedores.html"><i class="fa fa-users"></i> <span> Proveedores</span></a></li>
+				<li><a href="ventas.html"><i class='fa fa-area-chart'></i> <span> Ventas</span></a></li>
+				<li><a href="reportes.html"><i class='fa fa-file-text-o'></i> <span> Reportes</span></a></li>
+				<li><a href="consolidacion.html"><i class="fa fa-book"></i> <span> Consolidación</span></a></li>
+				<li><a href="index.html"><i class="fa fa-times-circle"></i> <span> Salir</span></a></li>
+			</ul>
+			</section>
+			</aside>
+			<!-- Contenido -->
+			<div class="content-wrapper">
+				<section class="content-header">
+				<br>
+					<h1>
+						PROVEEDORES
+					</h1>
+				<br>
+				<p> ¡Gestiona aquí los proveedores de la tienda! </p> 
+			<ol class="breadcrumb">
+			<br>
+			<li><a href="menuprincipal.html"><i class="fa fa-dashboard"></i> MENÚ</a></li>
+			<li class="active"> <i class="fa fa-users"></i> Proveedores</li>
+			</ol>
+			</section>
+			<section class="content">
+			<div class="row">
+			<div class="col-md-12">
+			<div class="btn-group  pull-right">
+				<a href="nuevoproveedor.html" class="btn btn-default"><i class="fa fa-plus-square"></i> Agregar Proveedor</a>
+				<a href="actualizarproveedor.html" class="btn btn-default"><i class="fa fa-edit"></i> Editar</button></a>
+				<button type="button" id="eliminar" class="btn btn-default"><i class="fa fa-trash"></i> Eliminar</button>
+				<button type="button" id="boton" class="btn btn-default"><i class="fa fa-list"></i> Listar</button>
+			</div>
+		  <label id="id">Ingrese NIT:&nbsp;</label>
+			<input id="ingreso" placeholder="NIT del Proveedor">
+			<input type="button" class="btn btn-default" id= "bot" value="Aceptar">
+			<!--Inicia Tabla -->
+			<div class="clearfix"></div>	
+			<br>
+			<div class="box">
+				<div class="box-header">
+					<h3 class="box-title">Proveedores</h3>
+				</div><!-- /.box-header -->
+			<div class="box-body no-padding">
+			<div class="box-body">
+			<table class="table table-bordered datatable table-hover">
+				<thead>
+					<th>NIT Proveedor</th>
+					<th>Nombre Completo</th>
+					<th>Dirección</th>
+					<th>Teléfono</th>
+					<th>Ciudad</th>
+				</thead>
+			<tbody id="res">
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</section>
+			</div>
+			<!--Footer-->
+			<footer class="main-footer">
+				<strong>Copyright &copy; 2021 <a  target="_blank"> Laura López - Jean Carlo Rodríguez - David Tique - Santiago Robayo - Camilo Peñate</a></strong>
+			</footer>  
+			</div>
+			<!-- SCRIPTS -->
+			<script src="frontJs/buscarProveedor.js"></script>
+			<script src="frontJs/LIstarProveedores.js"></script>
+			<script src="frontJs/deleteProveedor.js"></script>     <script src="dist/js/app.min.js" type="text/javascript"></script>
+			<script src="datatables/jquery.dataTables.min.js"></script>
+			<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+			<script src="datatables/dataTables.bootstrap.min.js"></script>
+			<script type="text/javascript">
+			  $(document).ready(function(){
+				$(".datatable").DataTable({
+				  "language": {
+				"sProcessing":    "Procesando...",
+				"sLengthMenu":    "Mostrar _MENU_ registros",
+				"sZeroRecords":   "No se encontraron resultados",
+				"sEmptyTable":    "Ningún dato disponible en esta tabla",
+				"sInfo":          "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+				"sInfoEmpty":     "Mostrando registros del 0 al 0 de un total de 0 registros",
+				"sInfoFiltered":  "(filtrado de un total de _MAX_ registros)",
+				"sInfoPostFix":   "",
+				"sSearch":        "Buscar:",
+				"sUrl":           "",
+				"sInfoThousands":  ",",
+				"sLoadingRecords": "Cargando...",
+				"oPaginate": {
+					"sFirst":    "Primero",
+					"sLast":    "Último",
+					"sNext":    "Siguiente",
+					"sPrevious": "Anterior"
+				},
+				"oAria": {
+					"sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+					"sSortDescending": ": Activar para ordenar la columna de manera descendente"
+				}
+			}
+				});
+			  });
+			</script> 
+	</body>
+</html>
